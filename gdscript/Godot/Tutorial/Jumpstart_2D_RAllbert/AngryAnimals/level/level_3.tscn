@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds2bwfi38vrdn"]
+
+[ext_resource type="PackedScene" uid="uid://bn4pps7nk2wp6" path="res://level/level.tscn" id="1_rmwe8"]
+[ext_resource type="PackedScene" uid="uid://b3415cdawar1v" path="res://cup/cup.tscn" id="2_oaltx"]
+[ext_resource type="PackedScene" uid="uid://ce10s6yvgvhwo" path="res://wall/wall.tscn" id="3_mtb61"]
+
+[node name="Level3" instance=ExtResource("1_rmwe8")]
+
+[node name="AnimalStart" parent="." index="3"]
+position = Vector2(141, 183)
+
+[node name="Cup" parent="." index="4" instance=ExtResource("2_oaltx")]
+position = Vector2(661, 470)
+
+[node name="Cup4" parent="." index="5" instance=ExtResource("2_oaltx")]
+position = Vector2(946, 165)
+
+[node name="Cup2" parent="." index="6" instance=ExtResource("2_oaltx")]
+position = Vector2(552, 330)
+
+[node name="Cup3" parent="." index="7" instance=ExtResource("2_oaltx")]
+position = Vector2(846, 475)
+
+[node name="Wall" parent="." index="8" instance=ExtResource("3_mtb61")]
+position = Vector2(747, 118)
+rotation = -1.67565
+
+[node name="LuanchArea" parent="." index="10"]
+position = Vector2(38, 240)

@@ -1,0 +1,222 @@
+[gd_scene load_steps=16 format=3 uid="uid://nngl10jj5nak"]
+
+[ext_resource type="Texture2D" uid="uid://ds7p5pxermf8w" path="res://assets/player/player.png" id="1_3g8bg"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_5k540"]
+[ext_resource type="PackedScene" uid="uid://dkxbd2sg5sgn2" path="res://shooter/shooter.tscn" id="3_es47f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qn4"]
+size = Vector2(10, 18)
+
+[sub_resource type="Animation" id="Animation_8rhlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_robd7"]
+resource_name = "fall"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_dwu57"]
+resource_name = "hurt"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_vgf8q"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_3lcy5"]
+resource_name = "jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [17]
+}
+
+[sub_resource type="Animation" id="Animation_825uy"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ml7e3"]
+_data = {
+"RESET": SubResource("Animation_8rhlt"),
+"fall": SubResource("Animation_robd7"),
+"hurt": SubResource("Animation_dwu57"),
+"idle": SubResource("Animation_vgf8q"),
+"jump": SubResource("Animation_3lcy5"),
+"run": SubResource("Animation_825uy")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tfv6t"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_qql2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gv7ce"]
+resource_name = "invincible"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wvfx6"]
+_data = {
+"RESET": SubResource("Animation_qql2r"),
+"invincible": SubResource("Animation_gv7ce")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 32
+script = ExtResource("1_5k540")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3g8bg")
+hframes = 19
+frame = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_l5qn4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_ml7e3")
+}
+
+[node name="DebugLabel" type="Label" parent="."]
+visible = false
+offset_left = -37.0
+offset_top = -64.0
+offset_right = 449.0
+offset_bottom = 216.0
+scale = Vector2(0.164978, 0.175978)
+theme_override_font_sizes/font_size = 48
+text = "debug label: 
+lkjwlakjlwkajlkawjla
+jlawjlkajl 
+lwajljwaljalwk"
+autowrap_mode = 2
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_tfv6t")
+
+[node name="Shooter" parent="." instance=ExtResource("3_es47f")]
+speed = 300.0
+shoot_delay = 0.5
+
+[node name="AnimationPlayerInvincible" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wvfx6")
+}
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="InvincibleTimer" to="." method="_on_invincible_timer_timeout"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

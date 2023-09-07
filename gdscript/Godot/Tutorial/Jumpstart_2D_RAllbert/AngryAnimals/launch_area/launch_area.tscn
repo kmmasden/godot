@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bboihhtq3l3m3"]
+
+[ext_resource type="Texture2D" uid="uid://d2ee8w8sbaf2w" path="res://assets/env/elementStone025.png" id="1_voywb"]
+
+[node name="LuanchArea" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(0.6, 0.75)
+texture = ExtResource("1_voywb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(158, 37)
+scale = Vector2(0.5, 0.4)
+texture = ExtResource("1_voywb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(78, 66.5652)
+rotation = 1.5708
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("1_voywb")

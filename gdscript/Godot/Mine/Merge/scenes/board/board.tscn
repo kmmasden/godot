@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfa0dyruph2fb"]
+
+[ext_resource type="Script" path="res://scenes/board/board.gd" id="1_56yrw"]
+[ext_resource type="Texture2D" uid="uid://dgljo8nirwcif" path="res://assets/img/ui/board.png" id="2_fdhho"]
+[ext_resource type="Texture2D" uid="uid://ckcadc5iytvoq" path="res://assets/img/ui/board-frame.png" id="2_puume"]
+
+[node name="MergeBoard" type="Control"]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 450.0
+grow_horizontal = 2
+scale = Vector2(0.95, 0.95)
+size_flags_vertical = 4
+script = ExtResource("1_56yrw")
+
+[node name="BoardFrameImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_right = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_puume")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BoardBackgroundImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = 13.0
+offset_right = 211.875
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fdhho")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 58
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 53
+theme_override_constants/margin_bottom = 42
+
+[node name="MergeGrid" type="GridContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 6

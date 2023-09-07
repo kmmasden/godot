@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu8sfk6646lp1"]
+
+[ext_resource type="PackedScene" uid="uid://bgukwt1txb3k8" path="res://level_base/level_base.tscn" id="1_btiru"]
+[ext_resource type="PackedScene" uid="uid://bj360vdcs4s0q" path="res://enemies/frog/frog.tscn" id="2_got5f"]
+[ext_resource type="PackedScene" uid="uid://c566d5fn4q0kb" path="res://enemies/snail/snail.tscn" id="3_os4aq"]
+
+[node name="Level_2" instance=ExtResource("1_btiru")]
+
+[node name="ScrollingBg" parent="." index="0"]
+level_number = 2
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(13, 458752, 0, 12, 458752, 0, 11, 458752, 0, 10, 458752, 0, 9, 458752, 0, 8, 458752, 0, 7, 458752, 0, 6, 458752, 0, 5, 458752, 0, 4, 458752, 0, 3, 458752, 0, 2, 458752, 0, 1, 458752, 0, 0, 458752, 0, 65535, 458752, 0, 65534, 458752, 0, 65533, 458752, 0, 65532, 458752, 0, 65531, 458752, 0, 65529, 458752, 0, 65528, 458752, 0, 65527, 458752, 0, 65526, 458752, 0, 65525, 458752, 0, 65524, 458752, 0, 65523, 458752, 0, 65522, 458752, 0, 65521, 458752, 0, 65520, 458752, 0, 65518, 458752, 0, 14, 458752, 0, 15, 458752, 0, 16, 458752, 0, 17, 458752, 0, 18, 458752, 0, 19, 458752, 0, 20, 458752, 0, 21, 458752, 0, 22, 458752, 0, 23, 458752, 0, 24, 458752, 0, 25, 458752, 0, 26, 458752, 0, 27, 458752, 0, 28, 458752, 0, 29, 458752, 0, 30, 458752, 0, 31, 458752, 0, 32, 458752, 0, 33, 458752, 0, 34, 458752, 0, -65531, 1179648, 4, -131067, 1179648, 4)
+
+[node name="Frog" parent="." index="10" instance=ExtResource("2_got5f")]
+position = Vector2(132, -21)
+
+[node name="Snail" parent="." index="11" instance=ExtResource("3_os4aq")]
+position = Vector2(-150.093, -39.4442)
+
+[node name="Snail2" parent="." index="12" instance=ExtResource("3_os4aq")]
+position = Vector2(-150.093, -39.4442)
+
+[node name="Snail3" parent="." index="13" instance=ExtResource("3_os4aq")]
+position = Vector2(-150.093, -39.4442)
+
+[node name="Snail4" parent="." index="14" instance=ExtResource("3_os4aq")]
+position = Vector2(-150.093, -39.4442)
+
+[node name="Snail5" parent="." index="15" instance=ExtResource("3_os4aq")]
+position = Vector2(-150.093, -39.4442)

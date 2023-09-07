@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfa0dyruph2fb"]
+
+[ext_resource type="Script" path="res://scenes/board/board.gd" id="1_m10bb"]
+[ext_resource type="Texture2D" uid="uid://dgljo8nirwcif" path="res://assets/img/ui/board.png" id="2_fdhho"]
+[ext_resource type="Texture2D" uid="uid://ckcadc5iytvoq" path="res://assets/img/ui/board-frame.png" id="2_puume"]
+[ext_resource type="PackedScene" uid="uid://c8kt4hrcioqbj" path="res://scenes/board_item/board_item.tscn" id="3_iuhvx"]
+
+[node name="Board" type="Control"]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 450.0
+grow_horizontal = 2
+scale = Vector2(0.95, 0.95)
+size_flags_vertical = 4
+script = ExtResource("1_m10bb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_right = 7.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_puume")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BoardBackgroundImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 23.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fdhho")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 73
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 25
+
+[node name="BoardGrid" type="GridContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
+columns = 6
+
+[node name="BoardItem" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem2" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem3" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem4" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem5" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem6" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem7" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem8" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem9" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem10" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem11" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem12" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem13" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem14" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem15" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem16" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem17" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem18" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem19" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem20" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem21" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem22" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem23" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem24" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem25" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem26" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem27" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem28" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem29" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem30" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem31" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem32" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem33" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem34" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem35" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2
+
+[node name="BoardItem36" parent="MC/BoardGrid" instance=ExtResource("3_iuhvx")]
+layout_mode = 2

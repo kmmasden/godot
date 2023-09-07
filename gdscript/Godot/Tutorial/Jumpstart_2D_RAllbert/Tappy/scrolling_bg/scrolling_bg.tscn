@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqyjh4ypw18eo"]
+
+[ext_resource type="Script" path="res://scrolling_bg/scrolling_bg.gd" id="1_01uq2"]
+[ext_resource type="PackedScene" uid="uid://dkdotm3odctpv" path="res://scrolling_layer/scrolling_layer.tscn" id="2_2bcyc"]
+[ext_resource type="Texture2D" uid="uid://b7meemd6cmnke" path="res://assets/background/sky.png" id="3_67idq"]
+[ext_resource type="Texture2D" uid="uid://38c44rmkv4lm" path="res://assets/background/clouds_2.png" id="4_2sno3"]
+[ext_resource type="Texture2D" uid="uid://b1tfquipi6jiv" path="res://assets/background/rocks_1.png" id="5_8xket"]
+[ext_resource type="Texture2D" uid="uid://v55qrvu286mw" path="res://assets/background/clouds_1.png" id="5_yr3cj"]
+[ext_resource type="Texture2D" uid="uid://b3x74e3aijx1e" path="res://assets/background/clouds_3.png" id="6_evfk8"]
+[ext_resource type="Texture2D" uid="uid://cvi0hmphp7ra" path="res://assets/background/rocks_2.png" id="6_uum7x"]
+[ext_resource type="Texture2D" uid="uid://bf2jh210nprfv" path="res://assets/background/clouds_4.png" id="7_ka017"]
+
+[node name="ScrollingBg" type="ParallaxBackground"]
+script = ExtResource("1_01uq2")
+
+[node name="ScrollingLayer" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("3_67idq")
+
+[node name="ScrollingLayer2" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("4_2sno3")
+scroll_scale = 0.2
+
+[node name="ScrollingLayer6" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("5_yr3cj")
+scroll_scale = 0.2
+
+[node name="ScrollingLayer7" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("6_evfk8")
+scroll_scale = 0.2
+
+[node name="ScrollingLayer8" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("7_ka017")
+scroll_scale = 0.2
+
+[node name="ScrollingLayer3" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("5_8xket")
+scroll_scale = 0.5
+
+[node name="ScrollingLayer5" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("6_uum7x")
+scroll_scale = 0.5
+
+[node name="ScrollingLayer4" parent="." instance=ExtResource("2_2bcyc")]
+texture = ExtResource("6_uum7x")
+scroll_scale = 0.7

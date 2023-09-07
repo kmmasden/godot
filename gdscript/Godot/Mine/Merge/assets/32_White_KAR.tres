@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cms7g1lnc3or5"]
+
+[ext_resource type="FontFile" uid="uid://bdg2ylgj5pgj" path="res://assets/fonts/Kaph-Regular.otf" id="1_ifi1f"]
+
+[resource]
+font = ExtResource("1_ifi1f")
+font_size = 32

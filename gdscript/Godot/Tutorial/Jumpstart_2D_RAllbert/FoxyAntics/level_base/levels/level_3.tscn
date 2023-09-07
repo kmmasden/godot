@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxpp0indhtdqm"]
+
+[ext_resource type="PackedScene" uid="uid://bgukwt1txb3k8" path="res://level_base/level_base.tscn" id="1_hhjcb"]
+[ext_resource type="PackedScene" uid="uid://gb30lt1t31nq" path="res://floor_spikes/floor_spikes.tscn" id="2_ihdj4"]
+[ext_resource type="PackedScene" uid="uid://bj360vdcs4s0q" path="res://enemies/frog/frog.tscn" id="3_01qsm"]
+
+[node name="Level_3" instance=ExtResource("1_hhjcb")]
+
+[node name="ScrollingBg" parent="." index="0"]
+level_number = 3
+
+[node name="Boss" parent="." index="8"]
+position = Vector2(507, -14)
+
+[node name="Checkpoint" parent="." index="9"]
+position = Vector2(545, 2)
+
+[node name="FloorSpikes" parent="." index="10" instance=ExtResource("2_ihdj4")]
+position = Vector2(120, 0)
+
+[node name="Frog" parent="." index="11" instance=ExtResource("3_01qsm")]
+position = Vector2(191, -13)

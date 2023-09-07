@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://fc0kcnkgmwdi"]
+
+[ext_resource type="Texture2D" uid="uid://b7wtmwns3b4g3" path="res://Art/GatherersExterior/Tools/axe_copper.png" id="1_diih4"]
+[ext_resource type="Script" path="res://UI/ItemButton.gd" id="2_2rebt"]
+
+[node name="ItemButton" type="Button"]
+icon = ExtResource("1_diih4")
+script = ExtResource("2_2rebt")

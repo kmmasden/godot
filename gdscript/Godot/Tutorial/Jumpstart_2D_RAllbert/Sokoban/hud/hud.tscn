@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://bspefj8d6vhxv"]
+
+[ext_resource type="LabelSettings" uid="uid://dhjbg2lxn0pwj" path="res://assets/GM_34_white.tres" id="1_ad4eb"]
+[ext_resource type="Script" path="res://hud/hud.gd" id="1_moyll"]
+[ext_resource type="FontFile" uid="uid://cn0mbcms1ax7q" path="res://assets/gemunu-libre-v8-latin-700.ttf" id="2_a3ip5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3yswi"]
+font = ExtResource("2_a3ip5")
+font_size = 26
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_moyll")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "[E]xit [R]eload Level"
+label_settings = SubResource("LabelSettings_3yswi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Level"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "99
+"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Moves"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1
+
+[node name="MovesLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "99
+"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Best"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1
+
+[node name="BestLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "99
+"
+label_settings = ExtResource("1_ad4eb")
+vertical_alignment = 1

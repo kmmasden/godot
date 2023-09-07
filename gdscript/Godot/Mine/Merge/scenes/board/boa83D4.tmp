@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfa0dyruph2fb"]
+
+[ext_resource type="Texture2D" uid="uid://dgljo8nirwcif" path="res://assets/img/ui/board.png" id="2_fdhho"]
+[ext_resource type="Texture2D" uid="uid://ckcadc5iytvoq" path="res://assets/img/ui/board-frame.png" id="2_puume"]
+
+[node name="Board" type="Control"]
+custom_minimum_size = Vector2(375, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -75.0
+offset_bottom = -400.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_puume")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="BoardBackgroundImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_fdhho")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 75
+
+[node name="Grid" type="GridContainer" parent="MC"]
+layout_mode = 2
+columns = 6

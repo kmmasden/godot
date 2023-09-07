@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ghertyaunvuw"]
+
+[ext_resource type="FontFile" uid="uid://o51dxqpt8rvr" path="res://assets/fonts/kenvector_future_thin.ttf" id="1_wpcud"]
+
+[resource]
+font = ExtResource("1_wpcud")
+font_size = 12

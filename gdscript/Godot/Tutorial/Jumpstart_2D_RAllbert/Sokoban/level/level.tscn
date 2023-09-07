@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6q0sub7kw8f6"]
+
+[ext_resource type="Texture2D" uid="uid://cq4uep31y2hj4" path="res://assets/spritesheet.png" id="1_5et56"]
+[ext_resource type="Script" path="res://level/level.gd" id="1_xujgf"]
+[ext_resource type="PackedScene" uid="uid://yfl8tg8u5hp2" path="res://player/player.tscn" id="2_y655f"]
+[ext_resource type="PackedScene" uid="uid://bspefj8d6vhxv" path="res://hud/hud.tscn" id="4_t1fe0"]
+[ext_resource type="PackedScene" uid="uid://drbufdqhgk34b" path="res://game_over_ui/game_over_ui.tscn" id="5_46h6h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_txqn8"]
+resource_name = "level_tiles"
+texture = ExtResource("1_5et56")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tu7ls"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_txqn8")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_xujgf")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, -2)
+tile_set = SubResource("TileSet_tu7ls")
+format = 2
+layer_0/name = "Floor"
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Targets"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Boxes"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+
+[node name="Player" parent="." instance=ExtResource("2_y655f")]
+position = Vector2(482, 472)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(533, 360)
+zoom = Vector2(1.2, 1.2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_t1fe0")]
+
+[node name="GameOverUI" parent="CanvasLayer" instance=ExtResource("5_46h6h")]
+visible = false
